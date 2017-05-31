@@ -1,0 +1,17 @@
+{
+    "name": "hisheng/zimu",
+    "authors": [
+        {
+            "name": "张海生",
+            "email": "465908774@qq.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Zimu\\": "src/"
+        }
+    }
+}
