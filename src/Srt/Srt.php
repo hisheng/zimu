@@ -27,8 +27,25 @@ class Srt implements SrtInterface
      }
      
      //取出一个字幕文件
-    public function get(){
+    public function get($filename){
+         //把文件读进一个字符串中
+        $strings = file_get_contents($filename);
+        print_r($strings);
+        $this->formate($strings);
+    }
     
+    public function formate($str){
+        echo 'match';
+        if($str){
+            $matches = [];
+            preg_match_all("/([\d]+?)[\s]+?[0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3} --> [0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3}[\s]+?(.+\n.+)+?/u", $str, $matches);
+            //var_dump($matches);//exit;
+            $srts = [];
+            foreach ($matches[2] as $key => $matche){
+                $srts[] = trim($matche);
+            }
+            var_dump($srts);
+        }
     }
     
     //取出unsaved目录的所有文件
@@ -42,8 +59,9 @@ class Srt implements SrtInterface
             if($dh){
                 while (false !== ($file = readdir($dh))) {
                     if(is_file($root.'./'.$file)){
-                        header("Content-type: text/html; charset=utf-8");
-                        echo $file."\n";
+                       // header("Content-type: text/html; charset=utf-8");
+                        //echo $file."\n";
+                        $this->get($root.'./'.$file);
                     }elseif(is_dir($root.'./'.$file)){
                         echo 'dir';
                         if(($file != '.') && ($file != '..')){
@@ -117,5 +135,8 @@ class Srt implements SrtInterface
         $response = $this->esClient->index($params);
         return $response;
     }
+    
+    
+    
     
 }

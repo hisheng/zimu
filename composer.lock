@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2feb36b7d0ba2c76a340c82c3e01cba2",
-    "content-hash": "11ca1342e9d72001ea7ab72b3015e5d6",
+    "hash": "4666177ee5cffe2c68bb7fecdf1e6139",
+    "content-hash": "5edf09514caecb543d67e91a78ebb6c1",
     "packages": [
         {
             "name": "elasticsearch/elasticsearch",
@@ -162,6 +162,39 @@
                 "stream"
             ],
             "time": "2014-10-12 19:18:40"
+        },
+        {
+            "name": "hisheng/es",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hisheng/es.git",
+                "reference": "f93702eb0b577dff557692a6990b97aa3222a908"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/hisheng/es/f93702eb0b577dff557692a6990b97aa3222a908.zip",
+                "reference": "f93702eb0b577dff557692a6990b97aa3222a908",
+                "shasum": ""
+            },
+            "require": {
+                "elasticsearch/elasticsearch": "^5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Es\\": "src/",
+                    "Test\\": "test"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "张海生",
+                    "email": "465908774@qq.com"
+                }
+            ],
+            "time": "2017-05-31 13:19:06"
         },
         {
             "name": "psr/log",
